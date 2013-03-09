@@ -1,0 +1,163 @@
+@main-font: "Lato";
+@secondary-font: Helvetica, sans-serif;
+
+@container-top-offset: 55px;
+@container-width: 960px;
+
+.border-radius(@topleft: 5px, @topright: 5px, @bottomright: 5px, @bottomleft: 5px) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	-o-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+.linear-gradient-two(@first: black, @second: white, @first-percent: 0%, @second-percent: 100%) {
+	background: -moz-linear-gradient(@first @first-percent, @second @second-percent); /* FF 3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@first-percent, @first), color-stop(@second-percent, @second)); /* Safari 4+, Chrome 2+ */
+    background: -webkit-linear-gradient(@first @first-percent, @second @second-percent); /* Safari 5.1+, Chrome 10+ */
+    background: -o-linear-gradient(@first @first-percent, @second @second-percent); /* Opera 11.10 */
+    background: linear-gradient(@first @first-percent, @second @second-percent); /* the standard */
+}
+
+// automatically set height, line-height, and font-size
+.height(@h, @t) {
+	height: @h;
+	line-height: @h;
+	font-size: @t;
+}
+
+@triangle-size: 20px;
+@logo-blue: #1896d5;
+
+@triangle-size: 20px;
+
+//convenience
+.triangle-down(@size:100px, @color:red) {
+	width: 0;
+	height: 0;
+	border-left: @size/2 solid transparent;
+	border-right: @size/2 solid transparent;
+	border-top: @size solid @color;
+}
+
+//actual styles
+html {
+    //always 100% so we can display background images
+    width: 100%;
+    height: 100%;
+}
+
+body {
+	//always 100% so we can display bg images
+	width: 100%;
+	height: 100%;
+	font-family: @main-font;
+}
+
+a.nostyle {
+	color: inherit;
+	text-decoration: none;
+}
+
+#main-menu {
+    // display as block at the top of the page, and make sure it goes all the way across
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    #navbar {
+        display: block;
+        text-align: center;
+        #top {
+        	min-width: 960px;
+            list-style: none;
+            position: relative;
+            .on {
+                li {
+                    a {
+                        border-bottom: 1px black dotted;
+                    }
+                }
+            }
+            li {
+                float: left;
+                padding: 10px 10px 10px 10px;
+                a {
+                    font-size: 20px;
+                    color: black;
+                    text-decoration: none;
+                    &:hover {
+                        color: lighten(black, 50%);
+                    }
+                }
+            }
+        }
+    }
+}
+div#content {
+	// always 100 to display bg images
+	width: 100%;
+	height: 100%;
+}
+
+
+@field-height: 30px;
+@field-width: 85%;
+@button-font: 13px;
+
+@fb-wordmark-padding: 10px;
+@fb-wordmark-width: 35px - @fb-wordmark-padding;
+
+#fb {
+    @field-width-margin: (100% - @field-width)/2;
+    display: block;
+    width: @field-width;
+    margin: 0 @field-width-margin 0 @field-width-margin;
+    height: @field-height;
+
+    @fb-color-dark: #273a6a;
+   	@fb-color-light: #3f619e;
+	@fb-color-lightest: #5887bc;
+    background-color: @fb-color-dark;
+    .linear-gradient-two(@fb-color-light, @fb-color-dark);
+
+    font-size: @button-font;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+        background-color: lighten(@fb-color-dark, 10%);
+        .linear-gradient-two(lighten(@fb-color-light, 10%), lighten(@fb-color-dark, 10%));
+    }
+
+    border-top: 1px solid @fb-color-lightest;
+    height: @field-height;
+    line-height: @field-height;
+
+    #facebook {
+        font-weight: 900;
+        font-family: @secondary-font;
+    }
+    &:before {
+    	//Dimensions
+        width: @fb-wordmark-width;
+        height: @field-height;
+
+        //Alignment and Borders
+        text-align: right;
+        padding-right: @fb-wordmark-padding;
+        border-right: 1px solid @fb-color-dark;
+        float: left;
+
+        //Font
+        content: 'f';
+        line-height: @field-height;
+        font-size: @field-height - 10px;
+        font-weight: 900;
+  		font-family: @secondary-font;
+    }
+}
