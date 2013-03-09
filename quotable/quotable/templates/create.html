@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{%block tab1 %}'on'{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ STATIC_URL }}css/create.css" type="text/css" rel="stylesheet">
+
+{% endblock %}
+
+{% block scripts %}
+    <script type='text/javascript' src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <script type='text/javascript' src="{{ STATIC_URL }}js/csrf-ajax.js"></script>
+    <script type='text/javascript' src="{{ STATIC_URL }}js/index.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div id='container'>
+    <div id='creation-form'>
+        <form id='create' method='post' action='/create/'>{% csrf_token %}
+            <div id='two'>
+                <p>friend name:</p>
+                <input type='text' name='sayer' id='sayer' class='input'><br>
+            </div>
+            <textarea cols="40" rows="5" name="body" class='input'></textarea></br>
+            <a id='submit' href="javascript:document.forms[1].submit();">Save</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- <FORM>
+Name:
+<INPUT TYPE="text" NAME="Name"
+   SIZE="30" MAXLENGTH="40">
+<br><br>
+Special Instructions:
+<br>
+<TEXTAREA NAME="SpecialRequest"
+   ROWS="3" COLS="25">
+Please enter your special instructions
+or comments
+</TEXTAREA>
+<br><br>
+<INPUT TYPE="submit">
+<INPUT TYPE="reset">
+</FORM> -->

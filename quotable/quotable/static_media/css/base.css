@@ -5,7 +5,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-family: "Lato";
+  font-family: "Gentium Book Basic";
 }
 a.nostyle {
   color: inherit;
@@ -30,6 +30,9 @@ a.nostyle {
 #main-menu #navbar #top .on li a {
   border-bottom: 1px black dotted;
 }
+#main-menu #navbar #top .hide {
+  display: none;
+}
 #main-menu #navbar #top li {
   float: left;
   padding: 10px 10px 10px 10px;
@@ -46,67 +49,11 @@ div#content {
   width: 100%;
   height: 100%;
 }
-#fb {
-  display: block;
-  width: 85%;
-  margin: 0 7.5% 0 7.5%;
-  background-color: #273a6a;
-  background: -moz-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* FF 3.6+ */
-
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3f619e), color-stop(100%, #273a6a));
-  /* Safari 4+, Chrome 2+ */
-
-  background: -webkit-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* Safari 5.1+, Chrome 10+ */
-
-  background: -o-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* Opera 11.10 */
-
-  background: linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* the standard */
-
-  font-size: 13px;
-  text-align: center;
-  color: white;
-  cursor: pointer;
-  overflow: hidden;
-  border-top: 1px solid #5887bc;
-  height: 30px;
-  line-height: 30px;
+.link {
+  font-size: 50px;
+  color: black;
+  text-decoration: none;
 }
-#fb:hover {
-  background-color: #354e8f;
-  background: -moz-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* FF 3.6+ */
-
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5579bb), color-stop(100%, #354e8f));
-  /* Safari 4+, Chrome 2+ */
-
-  background: -webkit-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* Safari 5.1+, Chrome 10+ */
-
-  background: -o-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* Opera 11.10 */
-
-  background: linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* the standard */
-
-}
-#fb #facebook {
-  font-weight: 900;
-  font-family: Helvetica, sans-serif;
-}
-#fb:before {
-  width: 25px;
-  height: 30px;
-  text-align: right;
-  padding-right: 10px;
-  border-right: 1px solid #273a6a;
-  float: left;
-  content: 'f';
-  line-height: 30px;
-  font-size: 20px;
-  font-weight: 900;
-  font-family: Helvetica, sans-serif;
+.link:hover {
+  color: #808080;
 }

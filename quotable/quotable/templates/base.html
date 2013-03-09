@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <title>Quotable | {% block title %}{% endblock %}</title>
-    <meta name="description" content="quotable">
-
+    {% block bootstrap %}{% endblock %}
+    <link rel='stylesheet' type='text/css' href='{{STATIC_URL}}css/reset.css'>
+    <link rel='stylesheet' type='text/css' href='{{STATIC_URL}}css/base.css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     {% block stylesheets %}{% endblock %}
     {% block scripts %}{% endblock %}
     {% block analytics %}{% endblock %}
 
 </head>
-    <body>
-        <div id='content'>
-            {% block content %}{% endblock %}
-        </div>
-    </body>
+<body>
+  {% block menu %}
+<div id='main-menu'>
+    <nav id='navbar'>
+        <ul id='top'>
+            <div class={%block tab1 %}{% endblock %}><li><a id='tab1' href="/catalog">me</a></div>
+            <div class={%block tab2 %}{% endblock %}><li><a id='tab2' href="/catalog">create</a></div>
+            <div class={%block tab3 %}{% endblock %}><li><a id='tab3' href="/catalog">newsfeed</a></div>
+            <div class={%block tab4 %}{% endblock %}><li><form id='tab4' action='/logout/' method='post'>{% csrf_token %}<a href="javascript:document.forms[0].submit();">sign out</a></form></div>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+{% endblock %}
+
+  <div id='content'>
+    {% block content %}{% endblock %}
+  </div>
+</body>
 </html>
+
+

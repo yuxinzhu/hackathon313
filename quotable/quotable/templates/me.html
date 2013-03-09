@@ -16,16 +16,18 @@
 
 
 <div id='container'>
-	<div id='login-block'>
-	    <form action="{% url facebook_connect %}?facebook_login=1" method="post">
-	        <div id='fb' onclick='F.connect(this.parentNode);'><p>Login with Facebook</p></div>
-	        {% if path %}
-	            <input type="hidden" value="{{path}}" name="next" />
-	        {% else %}
-	            <input type="hidden" value="/profile/" name="next" />
-	        {% endif %}
-	    </form>
-    	{% include 'django_facebook/_facebook_js.html' %}
-	</div>
+    <div id='feed-block'>
+        {% title %}
+        {% for q in quotes %}
+            <div class='quote'>
+                <p id='quote-body'>{{ q.body }}</p>
+                {% if q.sayer_id %}
+                    <a id='sayer1' href="/person/{{ q.sayer_id }}"> q.sayer </a>
+                {% else %}
+                    <p id='sayer2'>q.sayer </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

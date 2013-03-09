@@ -13,8 +13,13 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
+
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'account.views.login_user'),
+    url(r'^$', 'account.views.login_user'),
+    url(r'^create/$', 'quotes.views.create'),
+    url(r'^newsfeed/$', 'quotes.views.newsfeed'),
+    url(r'^me/$', 'account.views.me'),
+    url(r'^logout/$', 'account.views.logout_user'),
     (r'^facebook/', include('django_facebook.urls')),
-
 )

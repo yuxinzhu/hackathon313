@@ -1,64 +1,16 @@
-#fb {
+#container #login-block {
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  padding: 0;
+  font-size: 50px;
   display: block;
-  width: 85%;
-  margin: 0 7.5% 0 7.5%;
-  background-color: #273a6a;
-  background: -moz-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* FF 3.6+ */
-
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3f619e), color-stop(100%, #273a6a));
-  /* Safari 4+, Chrome 2+ */
-
-  background: -webkit-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* Safari 5.1+, Chrome 10+ */
-
-  background: -o-linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* Opera 11.10 */
-
-  background: linear-gradient(#3f619e 0%, #273a6a 100%);
-  /* the standard */
-
-  font-size: 13px;
-  text-align: center;
-  color: white;
+  margin: 0 auto;
+  margin-left: -200px;
+  top: 40%;
+  left: 50%;
   cursor: pointer;
-  overflow: hidden;
-  border-top: 1px solid #5887bc;
-  height: 30px;
-  line-height: 30px;
 }
-#fb:hover {
-  background-color: #354e8f;
-  background: -moz-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* FF 3.6+ */
-
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5579bb), color-stop(100%, #354e8f));
-  /* Safari 4+, Chrome 2+ */
-
-  background: -webkit-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* Safari 5.1+, Chrome 10+ */
-
-  background: -o-linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* Opera 11.10 */
-
-  background: linear-gradient(#5579bb 0%, #354e8f 100%);
-  /* the standard */
-
-}
-#fb #facebook {
-  font-weight: 900;
-  font-family: Helvetica, sans-serif;
-}
-#fb:before {
-  width: 25px;
-  height: 30px;
-  text-align: right;
-  padding-right: 10px;
-  border-right: 1px solid #273a6a;
-  float: left;
-  content: 'f';
-  line-height: 30px;
-  font-size: 20px;
-  font-weight: 900;
-  font-family: Helvetica, sans-serif;
+#container #login-block p:hover {
+  color: #808080;
 }
