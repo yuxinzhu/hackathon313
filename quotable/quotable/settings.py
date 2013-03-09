@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'account',
     'quotes',
     'django_facebook',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
