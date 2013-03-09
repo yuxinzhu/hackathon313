@@ -1,0 +1,71 @@
+@main-font: "Ubuntu", "Helvetica Neue", Helvetica, sans-serif;
+@secondary-font: Helvetica, sans-serif;
+
+@field-height: 30px;
+@field-width: 85%;
+@button-font: 13px;
+
+@fb-wordmark-padding: 10px;
+@fb-wordmark-width: 35px - @fb-wordmark-padding;
+
+
+.linear-gradient-two(@first: black, @second: white, @first-percent: 0%, @second-percent: 100%) {
+    background: -moz-linear-gradient(@first @first-percent, @second @second-percent); /* FF 3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(@first-percent, @first), color-stop(@second-percent, @second)); /* Safari 4+, Chrome 2+ */
+    background: -webkit-linear-gradient(@first @first-percent, @second @second-percent); /* Safari 5.1+, Chrome 10+ */
+    background: -o-linear-gradient(@first @first-percent, @second @second-percent); /* Opera 11.10 */
+    background: linear-gradient(@first @first-percent, @second @second-percent); /* the standard */
+    // no support for IE
+}
+
+#fb {
+    @field-width-margin: (100% - @field-width)/2;
+    display: block;
+    width: @field-width;
+    margin: 0 @field-width-margin 0 @field-width-margin;
+    height: @field-height;
+
+    @fb-color-dark: #273a6a;
+   	@fb-color-light: #3f619e;
+	@fb-color-lightest: #5887bc;
+    background-color: @fb-color-dark;
+    .linear-gradient-two(@fb-color-light, @fb-color-dark);
+
+    font-size: @button-font;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+        background-color: lighten(@fb-color-dark, 10%);
+        .linear-gradient-two(lighten(@fb-color-light, 10%), lighten(@fb-color-dark, 10%));
+    }
+
+    border-top: 1px solid @fb-color-lightest;
+    height: @field-height;
+    line-height: @field-height;
+
+    #facebook {
+        font-weight: 900;
+        font-family: @secondary-font;
+    }
+    &:before {
+    	//Dimensions
+        width: @fb-wordmark-width;
+        height: @field-height;
+
+        //Alignment and Borders
+        text-align: right;
+        padding-right: @fb-wordmark-padding;
+        border-right: 1px solid @fb-color-dark;
+        float: left;
+
+        //Font
+        content: 'f';
+        line-height: @field-height;
+        font-size: @field-height - 10px;
+        font-weight: 900;
+  		font-family: @secondary-font;
+    }
+}
