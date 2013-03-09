@@ -14,4 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^login/$', 'account.views.login_user'),
+    (r'^facebook/', include('django_facebook.urls')),
+
 )

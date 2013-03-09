@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 
 {% block stylesheets %}
-    <link href="{{ STATIC_URL }}css/index.css" type="text/css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/login.css" type="text/css" rel="stylesheet">
+
 {% endblock %}
 
 {% block scripts %}
     <script type='text/javascript' src="{{ STATIC_URL }}js/jquery.min.js"></script>
+    <script type='text/javascript' src="{{ STATIC_URL }}js/csrf-ajax.js"></script>
     <script type='text/javascript' src="{{ STATIC_URL }}js/index.js"></script>
 {% endblock %}
 
 {% block content %}
-	<div id='facebook'>
-        <form action="{% url facebook_connect %}?facebook_login=1" method="post">
-            <div id='fb' onclick='F.connect(this.parentNode);'>Login with <span id='facebook'>facebook</span></div>
-            {% if path %}
-                <input type="hidden" value="{{path}}" name="next" />
-            {% else %}
-                <input type="hidden" value="/profile/" name="next" />
-            {% endif %}
-        </form>
-    </div>
+	<h1> HEY BUDDY! </h1>
+    <form action="{% url facebook_connect %}?facebook_login=1" method="post">
+        <div id='fb' onclick='F.connect(this.parentNode);'>Login with <span id='facebook'>facebook</span></div>
+        {% if path %}
+            <input type="hidden" value="{{path}}" name="next" />
+        {% else %}
+            <input type="hidden" value="/profile/" name="next" />
+        {% endif %}
+    </form>
 {% endblock %}
