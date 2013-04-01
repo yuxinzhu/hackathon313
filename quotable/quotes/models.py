@@ -7,6 +7,7 @@ class Quote(models.Model):
     user = models.ForeignKey('account.QuotableUserProfile')
     body = models.TextField()
     sayer = models.CharField(max_length=100)
+    sayer_id = models.CharField(max_length=100)
     date_created = models.DateTimeField(auto_now=True)
 
 class Tag(models.Model):

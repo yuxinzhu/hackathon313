@@ -3,8 +3,7 @@
 {%block tab1 %}'on'{% endblock %}
 
 {% block stylesheets %}
-    <link href="{{ STATIC_URL }}css/create.css" type="text/css" rel="stylesheet">
-
+    <link href="{{ STATIC_URL }}css/me.css" type="text/css" rel="stylesheet">
 {% endblock %}
 
 {% block scripts %}
@@ -14,5 +13,18 @@
 {% endblock %}
 
 {% block content %}
-
+<div id='container'>
+    <div id='feed-block'>
+        {% for q in quotes %}
+            <div class='quote'>
+                <p id='quote-body'>{{ q.body }}</p>
+                {% if q.sayer_id %}
+                    <a id='sayer1' href="/person/{{ q.sayer_id }}"> q.sayer </a>
+                {% else %}
+                    <p id='sayer2'>q.sayer </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

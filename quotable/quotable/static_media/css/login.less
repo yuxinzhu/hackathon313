@@ -1,20 +1,33 @@
 #container {
     #login-block {
-        width: 500px;
-        height: 100px;
         position: absolute;
-        padding: 0;
-        font-size: 50px;
         display: block;
+        @width: 500px;
+        width: @width;
+        padding: 0;
         margin: 0 auto;
-        margin-left: -200px;
+        margin-left: -@width/2;
         top: 40%;
         left: 50%;
-        p {
-            &:hover {
-                color: lighten(black, 50%);
+        #header {
+            p {
+                font-family: 'Sacramento';
+                text-align: center;
+                font-size: 150px;
+                line-height: 150px;
             }
         }
-        cursor: pointer;
+        #fb {
+            width: 300px;
+            margin-left: 100px;
+            p {
+                text-align: center;
+                font-size: 25px;
+                &:hover {
+                    color: lighten(black, 40%);
+                }
+            }
+            cursor: pointer;
+        }
     }
 }

@@ -17,12 +17,13 @@
 
 <div id='container'>
 	<div id='login-block'>
+		<span id='header'><p>Quotable</p></span>
 	    <form action="{% url facebook_connect %}?facebook_login=1" method="post">
 	        <div id='fb' onclick='F.connect(this.parentNode);'><p>Login with Facebook</p></div>
 	        {% if path %}
 	            <input type="hidden" value="{{path}}" name="next" />
 	        {% else %}
-	            <input type="hidden" value="/profile/" name="next" />
+	            <input type="hidden" value="/newsfeed" name="next" />
 	        {% endif %}
 	    </form>
     	{% include 'django_facebook/_facebook_js.html' %}

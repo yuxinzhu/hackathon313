@@ -27,7 +27,7 @@ def retrieve_friends(request, field='uid'):
 @login_required
 def me(request):
     quotes = Quotable.objects.all(user=request.user.getProfile())
-    render_to_response("me.html", context_instance = RequestContext(request))
+    render_to_response("me.html", {'quotes': quotes}, context_instance = RequestContext(request))
 
 # @login_required
 # def retrieve_friend_quotes(request, friend_id):
